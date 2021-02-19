@@ -14,9 +14,9 @@
 //! This implements x25519 key exchange as specified by Mike Hamburg
 //! and Adam Langley in [RFC7748](https://tools.ietf.org/html/rfc7748).
 
-use curve25519_dalek::constants::ED25519_BASEPOINT_TABLE;
-use curve25519_dalek::montgomery::MontgomeryPoint;
-use curve25519_dalek::scalar::Scalar;
+use curve25519_dalek_ng::constants::ED25519_BASEPOINT_TABLE;
+use curve25519_dalek_ng::montgomery::MontgomeryPoint;
+use curve25519_dalek_ng::scalar::Scalar;
 
 use rand_core::CryptoRng;
 use rand_core::RngCore;
@@ -345,7 +345,7 @@ mod test {
     #[test]
     #[ignore] // Run only if you want to burn a lot of CPU doing 1,000,000 DH operations
     fn rfc7748_ladder_test2() {
-        use curve25519_dalek::constants::X25519_BASEPOINT;
+        use curve25519_dalek_ng::constants::X25519_BASEPOINT;
 
         let mut k: [u8; 32] = X25519_BASEPOINT.0;
         let mut u: [u8; 32] = X25519_BASEPOINT.0;

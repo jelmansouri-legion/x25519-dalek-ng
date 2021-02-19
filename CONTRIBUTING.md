@@ -1,4 +1,4 @@
-# Contributing to curve25519-dalek
+# Contributing to curve25519-dalek-ng
 
 If you have questions or comments, please feel free to email the
 authors. 
@@ -11,7 +11,7 @@ Patches are welcomed as pull requests on
 [our Github](https://github.com/dalek-cryptography/x25519-dalek), as well as by
 email (preferably sent to all of the authors listed in `Cargo.toml`).
 
-All issues on curve25519-dalek are mentored, if you want help with a bug just
+All issues on curve25519-dalek-ng are mentored, if you want help with a bug just
 ask @isislovecruft.
 
 Some issues are easier than others. The `easy` label can be used to find the

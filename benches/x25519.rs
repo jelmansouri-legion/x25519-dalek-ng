@@ -13,7 +13,7 @@
 
 #[macro_use]
 extern crate criterion;
-extern crate curve25519_dalek;
+extern crate curve25519_dalek_ng;
 extern crate rand_core;
 extern crate x25519_dalek_ng;
 
