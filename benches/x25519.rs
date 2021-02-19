@@ -1,6 +1,6 @@
 // -*- mode: rust; -*-
 //
-// This file is part of x25519-dalek.
+// This file is part of x25519-dalek-ng.
 // Copyright (c) 2017-2019 isis agora lovecruft
 // Copyright (c) 2019 DebugSteven
 // See LICENSE for licensing information.
@@ -15,14 +15,14 @@
 extern crate criterion;
 extern crate curve25519_dalek;
 extern crate rand_core;
-extern crate x25519_dalek;
+extern crate x25519_dalek_ng;
 
 use criterion::Criterion;
 
 use rand_core::OsRng;
 
-use x25519_dalek::EphemeralSecret;
-use x25519_dalek::PublicKey;
+use x25519_dalek_ng::EphemeralSecret;
+use x25519_dalek_ng::PublicKey;
 
 fn bench_diffie_hellman(c: &mut Criterion) {
     let bob_secret = EphemeralSecret::new(&mut OsRng);

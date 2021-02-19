@@ -1,6 +1,6 @@
 // -*- mode: rust; -*-
 //
-// This file is part of x25519-dalek.
+// This file is part of x25519-dalek-ng.
 // Copyright (c) 2017-2019 isis lovecruft
 // Copyright (c) 2019 DebugSteven
 // See LICENSE for licensing information.
@@ -100,7 +100,7 @@ impl<'a> From<&'a EphemeralSecret> for PublicKey {
 /// additional guarantees provided by [`EphemeralSecret`] are not helpful or would cause duplicate
 /// code paths.  In this case, it may be useful to
 /// ```rust,ignore
-/// use x25519_dalek::StaticSecret as SecretKey;
+/// use x25519_dalek_ng::StaticSecret as SecretKey;
 /// ```
 /// since the only difference between the two is that [`StaticSecret`] does not enforce at
 /// compile-time that the key is only used once.
