@@ -19,7 +19,7 @@ extern crate x25519_dalek_ng;
 
 use criterion::Criterion;
 
-use rand_core::OsRng;
+use rand::rngs::OsRng;
 
 use x25519_dalek_ng::EphemeralSecret;
 use x25519_dalek_ng::PublicKey;
