@@ -33,7 +33,7 @@ First, Alice uses `EphemeralSecret::new()` and then
 
 ```rust
 use rand_core::OsRng;
-use x25519_dalek::{EphemeralSecret, PublicKey};
+use x25519_dalek_ng::{EphemeralSecret, PublicKey};
 
 let alice_secret = EphemeralSecret::new(OsRng);
 let alice_public = PublicKey::from(&alice_secret);
@@ -43,7 +43,7 @@ Bob does the same:
 
 ```rust
 # use rand_core::OsRng;
-# use x25519_dalek::{EphemeralSecret, PublicKey};
+# use x25519_dalek_ng::{EphemeralSecret, PublicKey};
 let bob_secret = EphemeralSecret::new(OsRng);
 let bob_public = PublicKey::from(&bob_secret);
 ```
@@ -54,7 +54,7 @@ shared secret with Bob by doing:
 
 ```rust
 # use rand_core::OsRng;
-# use x25519_dalek::{EphemeralSecret, PublicKey};
+# use x25519_dalek_ng::{EphemeralSecret, PublicKey};
 # let alice_secret = EphemeralSecret::new(OsRng);
 # let alice_public = PublicKey::from(&alice_secret);
 # let bob_secret = EphemeralSecret::new(OsRng);
@@ -66,7 +66,7 @@ Similarly, Bob computes a shared secret by doing:
 
 ```rust
 # use rand_core::OsRng;
-# use x25519_dalek::{EphemeralSecret, PublicKey};
+# use x25519_dalek_ng::{EphemeralSecret, PublicKey};
 # let alice_secret = EphemeralSecret::new(OsRng);
 # let alice_public = PublicKey::from(&alice_secret);
 # let bob_secret = EphemeralSecret::new(OsRng);
@@ -78,7 +78,7 @@ These secrets are the same:
 
 ```rust
 # use rand_core::OsRng;
-# use x25519_dalek::{EphemeralSecret, PublicKey};
+# use x25519_dalek_ng::{EphemeralSecret, PublicKey};
 # let alice_secret = EphemeralSecret::new(OsRng);
 # let alice_public = PublicKey::from(&alice_secret);
 # let bob_secret = EphemeralSecret::new(OsRng);
@@ -88,7 +88,7 @@ These secrets are the same:
 assert_eq!(alice_shared_secret.as_bytes(), bob_shared_secret.as_bytes());
 ```
 
-Voilá!  Alice and Bob can now use their shared secret to encrypt their
+Voilà!  Alice and Bob can now use their shared secret to encrypt their
 meows, for example, by using it to generate a key and nonce for an
 authenticated-encryption cipher.
 
@@ -102,8 +102,12 @@ To install, add the following to your project's `Cargo.toml`:
 
 ```toml
 [dependencies]
-x25519-dalek = "1.1"
+x25519-dalek = "1"
 ```
+
+# MSRV
+
+Current MSRV is 1.41 for production builds, and 1.48 for running tests.
 
 # Documentation
 
